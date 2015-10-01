@@ -22,19 +22,18 @@ public class TwoEggs
         
         if (n < 0 || n > 99)
         {
-            System.out.println("The number should be in [0, 99]");
+            System.out.println("The number should be in the range of [0, 99]");
+            return;
         }
-        else
+        
+        int[] a = new int[100];
+        for (int i = n; i < a.length; ++i)
         {
-            int[] a = new int[100];
-            for (int i = n; i < a.length; ++i)
-            {
-                a[i] = 1;
-            }
-            
-            n = find(a);
-            System.out.printf("The index of the first element that has a value of 1 is %d\n", n);
+            a[i] = 1;
         }
+        
+        n = find(a);
+        System.out.printf("The index of the first element that has a value of 1 is %d\n", n);
     }
     
     private static int find(int[] a)
